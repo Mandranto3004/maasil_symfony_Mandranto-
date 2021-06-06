@@ -1,0 +1,14 @@
+<div class="row">
+    {{ form_start(form) }}
+    <div class="row">
+        <div class="col-md-4">{{ form_row(form.nom) }}</div>
+    </div>
+    
+    {{ form_widget(form) }}
+    <a href={{path('app_auteur_list')}} 
+    <!-- logo for regular state and mobile devices -->
+    <span class="btn btn-info"><b>Retour</b> à la liste</span>
+    </a>
+    <button class="btn btn-primary" style ="margin-left:49rem">{{ button|default('Enregistrer') }}</button>
+    {{ form_end(form) }}
+</div>

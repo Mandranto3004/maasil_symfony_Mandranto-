@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% form_theme form 'bootstrap_4_layout.html.twig' %}
+
+{% block title_page %}
+    <small>Ajouter un auteur</small>
+</h1>
+{% endblock %}
+
+{% block body %}
+                
+{{ include('auteur/_form.html.twig', {form: form, button: 'Sauvegarder'}) }}
+
+{% endblock %}

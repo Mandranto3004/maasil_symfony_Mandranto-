@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title 'Home' %}
+
+
+{% block body %}
+
+
+<section class="content-header">
+      <h1>
+        Liste des 5 deriners article
+        
+      </h1>
+      <ol class="breadcrumb">
+        <li><a href="{{path('app_article_list')}}"><i class="fa fa-dashboard"></i>Acticle</a></li>
+        <li><a href="{{path('app_auteur_list')}}">Auteur</a></li>
+      </ol>
+    </section>
+    &nbsp
+    <div class="row">
+    <a href="{{path('app_auteur_list')}}" class="btn btn-primary"><span class="glyphicon glyphicon-plus">Ajouter un auteur</a>
+    
+    <a href="{{path('app_article_list')}}" class="btn btn-primary"><span class="glyphicon glyphicon-plus">Ajouter une article</a>
+    </div>
+    &nbsp
+    <div class="row flex">
+    
+    {% for article in articles %}
+        <div class="class="col-xs-12">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="text-light-blue">{{ article.titre}}</h4>
+                    <h5 clas="card-text">{{ article.texte }}</h5>
+                    <h5 class="text-green" >{{article.auteur}} Publier le: {{article.createdAt|date("m/d/Y")}}</h5>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+    </div>
+      
+{% endblock %}

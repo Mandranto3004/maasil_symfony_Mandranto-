@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block title_page %}
+    <small>Gérer les auteurs</small>
+{% endblock %}
+
+{% block body %}
+{% for message in app.flashes('success') %}
+<div class="alert alert-success">
+    {{ message }}
+</div>
+{% endfor %}
+<div class="row">
+    <a href="{{ path('app_auteur_new')}}" class="btn btn-primary"><span class="glyphicon glyphicon-plus"></a>
+</div>
+&nbsp;
+<div>
+    <div class="row">
+        <div class="box-body table-responsive no-padding">
+            <table class="table table-hover">
+
+                <thead>
+                    <tr>
+                        <th>Nom d'auteur</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for auteur in auteurs %}
+                    <tr>
+                        <td>{{auteur.nom}}</td>
+                        <td>
+                            <a href="{{ path('app_auteur_edit', {'id': auteur.id}) }}"
+                                class="btn btn-block btn-primary"><span class="glyphicon glyphicon-edit"></span></a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+
+</div>
+{% endblock %}

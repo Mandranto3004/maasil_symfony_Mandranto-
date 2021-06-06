@@ -1,0 +1,22 @@
+<div class="row">
+    {{ form_start(form) }}
+    <div class="row">
+        <div class="col-md-4">{{ form_row(form.titre) }}</div>
+        <div class="col-md-4">{{ form_row(form.auteur) }}</div>
+    </div>
+    <div class="row">
+        <div class="col-md-4">{{ form_row(form.texte) }}</div>
+        <div class="col-md-4">{{ form_row(form.createdAt) }}</div>
+    </div>
+     <div class="row">
+        <div class="col-md-4">{{ form_row(form.updatedAt) }}</div>
+    </div>
+    
+    {{ form_widget(form) }}
+    <a href={{path('app_article_list')}} 
+    <!-- logo for regular state and mobile devices -->
+    <span class="btn btn-info"><b>Retour</b> à la liste</span>
+    </a>
+    <button class="btn btn-primary" style ="margin-left:49rem">{{ button|default('Enregistrer') }}</button>
+    {{ form_end(form) }}
+</div>

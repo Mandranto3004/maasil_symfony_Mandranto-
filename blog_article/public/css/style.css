@@ -1,0 +1,18 @@
+h3{
+    text-align: center;
+}
+#colonne1 {
+	float: left;
+	width: 160px;
+}
+#colonne2 {
+	float: right;
+	width: 250px;
+}
+.navbar{
+    overflow: hidden;
+    background-color: #333;
+    position: fixed; /* Set the navbar to fixed position */
+    top: 0; /* Position the navbar at the top of the page */
+    width: 100%; /* Full width */
+}
